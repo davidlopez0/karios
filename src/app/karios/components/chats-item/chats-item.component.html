@@ -1,0 +1,14 @@
+<div class="chats__item" routerLink="/karios/messenger/{{ chatInformation.chat_id }}">
+  <p-avatar
+    image="https://primefaces.org/cdn/primeng/images/demo/avatar/amyelsner.png"
+    class="chats__item-photo-profile"
+    size="xlarge"
+    shape="circle"
+  ></p-avatar>
+
+  <p class="chats__item-username">{{ chatInformation.username }}</p>
+
+  <p class="chats__item-last-message">{{ chatInformation.last_message }}</p>
+
+  <p class="chats__item-date">{{ chatInformation.date }}</p>
+</div>

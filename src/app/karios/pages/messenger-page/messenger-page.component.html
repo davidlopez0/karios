@@ -1,0 +1,39 @@
+<div class="layout">
+    <div class="navbar">
+
+        <a routerLink="/karios/home" class="navbar__back-link">
+            <i class="fa-solid fa-angle-left"></i>
+        </a>
+    
+    </div>
+
+    <div class="content">
+        <div class="chats" [style]="{'display': (url === '/karios/messenger' ? 'block' : 'none')}">
+            <div class="chats__header">
+                <p class="chats__header-text">Mensajes</p>
+
+                <button class="chats__header-new-message-button">
+                    <i class="fa-solid fa-square-plus"></i>
+                </button>    
+            </div>
+
+            <div class="chats__list-item">
+                <app-chats-item *ngFor="let chat of chats" [chatInformation]="chat" />
+                <app-chats-item *ngFor="let chat of chats" [chatInformation]="chat" />
+                <app-chats-item *ngFor="let chat of chats" [chatInformation]="chat" />
+                <app-chats-item *ngFor="let chat of chats" [chatInformation]="chat" />
+                <app-chats-item *ngFor="let chat of chats" [chatInformation]="chat" />
+            </div>
+        </div>
+
+        <div class="unselected-chat">
+            <i class="fa-regular fa-comments"></i>
+        </div>
+
+        
+            <div class="chat" [style]="{'display': (url === '/karios/messenger' ? 'none' : 'block')}">
+                
+            </div>
+
+    </div>
+</div>

@@ -1,0 +1,116 @@
+.layout {
+    display: grid;
+    grid-template-rows: 1fr;
+
+    .navbar {
+        display: none;
+        background-color: white;
+        padding: 1rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        position: sticky;
+        top: 0;
+        bottom: auto;
+    
+        .navbar__back-link {
+            font-size: 2.5rem;
+            color: black;
+        }
+    }
+}
+
+.content {
+
+    .chats {
+        display: none;
+        height: 100vh;
+        width: 100%;
+
+        .chats__header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 5rem;
+            padding: 1rem;
+
+            .chats__header-text {
+                font-size: 1.5rem;
+                font-weight: bold;
+            }
+
+            .chats__header-new-message-button {
+                border: none;
+                background-color: transparent;
+                cursor: pointer;
+    
+                i {
+                    font-size: 2.5rem;
+                }
+            }
+        }
+
+        .chats__list-item {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            padding: 0.5rem;
+            height: calc(100% - 5rem);
+            overflow-y: auto;
+            background-color: #ffffff;
+        }
+    }
+
+    .chat {
+        height: 100vh;
+        display: flex;
+        align-items: center !important;
+    }
+
+}
+
+@media (min-width: 768px) {
+
+    .content {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        .chats {
+            width: 17%;
+            justify-content: center;
+            display: block;
+        }
+
+        .chat {
+            width: 100%;
+        }
+    }
+
+}
+
+@media (min-width: 1024px) {
+    
+    .content {
+        display: flex;
+        
+        .chats {
+            width: 30%;
+
+            .chats__list-item::-webkit-scrollbar {
+                width: 0.5rem;
+            }
+
+            .chats__list-item::-webkit-scrollbar-thumb {
+                border-radius: 1rem;
+                background-color: #f8f9fa;
+            }
+        }
+
+        .chat {
+            width: 70%;
+        }
+
+    }
+
+}

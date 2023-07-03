@@ -1,0 +1,21 @@
+.storie {
+    width: auto;
+    height: auto;
+    background-color: white;
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
+
+    .storie__username {
+        font-size: 1.3rem;
+    }
+}
+
+@media (min-width: 1024px) {
+    .storie {
+        width: 100%;
+        flex-direction: row;
+        justify-content: space-around;
+        gap: 1rem;
+    }
+}

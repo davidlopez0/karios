@@ -1,0 +1,30 @@
+<div class="layout">
+    <!-- <div class="navbar">
+
+        <a routerLink="/karios/messenger" class="navbar__back-link">
+            <i class="fa-solid fa-angle-left"></i>
+        </a>
+    
+    </div> -->
+
+    <div class="content">
+        <div class="chats">
+            <div class="chats__header">
+                <p class="chats__header-text">Mensajes</p>
+
+                <button class="chats__header-new-message-button">
+                    <i class="fa-solid fa-square-plus"></i>
+                </button>    
+            </div>
+
+            <div class="chats__list-item">
+                <app-chats-item *ngFor="let chat of chats" [chatInformation]="chat" />
+            </div>
+        </div>
+
+            <div class="chat">
+                <app-chat></app-chat>
+            </div>
+
+    </div>
+</div>
