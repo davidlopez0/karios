@@ -1,1 +1,54 @@
-<p>register-page works!</p>
+<div class="layout">
+    <div class="auth-card">
+        <div class="auth-card__header">
+            <p>Crear una cuenta</p>
+        </div>
+
+        <form class="auth-card__form" [formGroup]="registerForm" (ngSubmit)="onRegister()">
+
+            <div class="auth-card__body">
+
+                <div class="auth-card__username-field">
+                    <label for="username">Ingresa tu nombre de usuario:</label>
+                     <input type="text" formControlName="username" placeholder="Nombre de usuario...">
+                     <span></span>
+                </div>
+
+                <div class="auth-card__email-field">
+                    <label for="email">Ingresa tu email:</label>
+                     <input type="email" formControlName="email" placeholder="Email...">
+                </div>
+
+                <div class="auth-card__password-field">
+                    <label for="password">Ingresa tu contraseña:</label>
+                    <input type="password" name="password" id="password" placeholder="Contraseña...">
+                </div>
+
+                <div class="auth-card__confirm-password-field">
+                    <label for="confirm-password">Confirma tu contraseña:</label>
+                    <input type="confirm-password" name="confirm-password" id="confirm-password" placeholder="Confirmar contraseña...">
+                </div>
+            </div>
+            
+            <div class="auth-card__footer">
+
+                <button type="submit" 
+                    class="auth-card__action-button">
+                    Registrarse
+                </button>
+
+            </div>
+
+            <a routerLink="/auth/login">Ya tengo una cuenta</a>
+
+        </form>
+    </div>
+</div>
+
+<p>
+    Touched: 
+    {{ this.registerForm.controls['email'].touched | json }}
+
+    Pristine:
+    {{ this.registerForm.pristine | json }}
+</p>

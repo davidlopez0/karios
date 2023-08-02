@@ -1,10 +1,10 @@
 <div class="publication">
     <div class="publication__header">
-        <p-avatar image="https://primefaces.org/cdn/primeng/images/demo/avatar/amyelsner.png" class="publication__photo-profile" size="xlarge" shape="circle"></p-avatar>
+        <p-avatar [image]="publication.user.imageUrl" class="publication__photo-profile" size="xlarge" shape="circle"></p-avatar>
 
-        <p class="publication__username">juan</p>
+        <p class="publication__username">{{ publication.user.username }}</p>
 
-        <p class="publication__date">ayer</p>
+        <p class="publication__date">{{ publication.publicationDate.getDate }}</p>
 
         <p class="publication__likes"><i class="fa-solid fa-heart"></i> 0</p>
 
@@ -13,27 +13,27 @@
 
     <div class="publication__body">
         <p class="publication__description">
-            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Perspiciatis nemo corporis sequi harum veniam facilis asdasd asd asd. aa
+            {{ publication.description }}
         </p>
 
-        <img class="publication__image" src="/src/assets/perrito.jpg" alt="perritoo">
+        <p-image [src]="publication.imageUrl" styleClass="border-round-2xl" alt="Imagen de la publicacion" width="100%"></p-image>
     </div>
 
     <div class="publication__footer">
 
-            <button type="button" 
+            <button type="button"
                     class="publication__action-button">
                     <i class="fa-regular fa-heart"></i>
                     Me gusta
             </button>
 
-            <button type="button" 
+            <button type="button"
                     class="publication__action-button">
                     <i class="fa-regular fa-comment"></i>
                     Comentar
             </button>
 
-            <button type="button" 
+            <button type="button"
                     class="publication__action-button">
                     <i class="fa-solid fa-share"></i>
                     Compartir

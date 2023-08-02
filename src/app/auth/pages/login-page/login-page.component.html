@@ -1,1 +1,41 @@
-<p>login-page works!</p>
+<div class="layout">
+    <div class="auth-card">
+        <div class="auth-card__header">
+            <p>Inicio de sesión</p>
+        </div>
+
+        <form class="auth-card__form" [formGroup]="loginForm" (submit)="onLogin(loginForm)">
+
+            <div class="auth-card__body">
+                <div class="auth-card__email-field">
+                    <label for="email">Ingresa tu email:</label>
+                     <input type="email" formControlName="email" id="email" placeholder="Email...">
+                </div>
+
+                <div class="auth-card__password-field">
+                    <label for="password">Ingresa tu contraseña:</label>
+                    <input type="password" formControlName="password" id="password" placeholder="Contraseña...">
+                </div>
+            </div>
+            
+            <div class="auth-card__footer">
+
+                <button type="submit" 
+                    class="auth-card__action-button">
+                    <i class="fa-solid fa-right-to-bracket"></i>
+                    Iniciar sesión
+                </button>
+
+                <button type="button" 
+                    class="auth-card__action-button">
+                    <i class="fa-brands fa-google"></i>
+                    Iniciar sesión con Google
+                </button>
+
+            </div>
+
+            <a routerLink="/auth/register">No tengo una cuenta</a>
+
+        </form>
+    </div>
+</div>

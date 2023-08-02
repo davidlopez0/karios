@@ -3,6 +3,7 @@ import { ButtonModule } from 'primeng/button';
 import { CardModule } from 'primeng/card';
 import { AvatarModule } from 'primeng/avatar';
 import { GalleriaModule } from 'primeng/galleria';
+import { ImageModule } from "primeng/image";
 
 
 @NgModule({
@@ -11,6 +12,7 @@ import { GalleriaModule } from 'primeng/galleria';
     ButtonModule,
     AvatarModule,
     GalleriaModule,
+    ImageModule,
   ]
 })
 export class PrimengModule { }
