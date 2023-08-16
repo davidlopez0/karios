@@ -4,12 +4,13 @@
     min-height: 90vh;
     justify-content: space-between;
     gap: 3rem;
-    padding: 2rem;
+    padding: 0.5rem;
 
     .profile__header {
         display: flex;
         flex-direction: column;
         gap: 3rem;
+        padding: 0 2rem;
 
         .profile__header-information {
             display: flex;

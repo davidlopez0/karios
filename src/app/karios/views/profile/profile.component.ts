@@ -1,10 +1,10 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnChanges, OnInit } from '@angular/core';
 import { User } from '../../interfaces/user.interface';
 import { UserService } from '../../services/user.service';
-import { Params, Router } from '@angular/router';
+import { NavigationEnd, Params, Router } from '@angular/router';
 import { PublicationService } from '../../services/publication.service';
 import { Publication } from '../../interfaces/publication.interface';
-import { switchMap } from 'rxjs';
+import { filter, switchMap } from 'rxjs';
 
 @Component({
   selector: 'app-profile',

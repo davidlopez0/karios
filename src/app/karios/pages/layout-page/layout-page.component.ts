@@ -7,21 +7,10 @@ import {PublicationService} from "../../services/publication.service";
   templateUrl: './layout-page.component.html',
   styleUrls: ['./layout-page.component.scss']
 })
-export class LayoutPageComponent implements OnInit {
-
-  constructor(private publicationService: PublicationService){}
+export class LayoutPageComponent {
 
   get currentUser(): string {
     const user = JSON.parse(localStorage.getItem('user') || '');
     return user?.username;
   }
-
-  ngOnInit(): void {
-    this.publicationService.getAllPublications();
-  }
-
-  get getPublications(): Publication[] {
-    return this.publicationService.getPublications;
-  }
-
 }
