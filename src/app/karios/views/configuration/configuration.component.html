@@ -1,0 +1,40 @@
+
+<div class="configuration">
+
+    <div class="configuration__item configuration__item--0">
+        <a routerLink="/karios/profile/{{ currentUser.username }}"><i class="fa-solid fa-angle-left"></i> Atrás</a>
+   </div>
+
+   <div class="configuration__item configuration__item--1">
+        <h3>Cambiar foto de perfil</h3>
+        <p>Elige la imágen por la que deseas cambiar tu foto de perfil</p>
+        <label class="publication__custom-field-image">
+            <i class="fa-solid fa-plus"></i>
+            Selecciona una imágen
+        </label>
+        <hr>
+   </div>
+
+   <div class="configuration__item configuration__item--2">
+        <h3>Cambiar nombre de usuario</h3>
+        <p>El nombre de usuario debe tener mínimo 3 carácteres</p>
+        <input type="text" placeholder="Usuario...">
+        <hr>
+   </div>
+
+   <div class="configuration__item configuration__item--3">
+        <h3>Cerrar sesión</h3>
+        <button (click)="logout()">Cerrar sesión</button>
+        <hr>
+    </div>
+
+    <div class="configuration__item configuration__item--4">
+        <h3>Eliminar cuenta</h3>
+        <p>Al eliminar la cuenta no habrá forma de volverla a recuperar, se eliminará definitivamente y todos tus datos también, al pulsar el botón se eliminará de manera definitiva sin aviso.</p>
+        <button>Eliminar cuenta</button>
+        <hr>
+   </div>
+
+</div>
+
+

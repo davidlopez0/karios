@@ -1,0 +1,45 @@
+
+    <form class="publication" [formGroup]="publicationForm" (submit)="createPublication()">
+
+        <h1 class="publication_title">
+            Nueva publicación
+        </h1>
+
+        <div class="publication__description">
+            <p>Descripción:</p>
+            <textarea formControlName="description" placeholder="Descripcion..." maxlength="130" class="publication__description-field">tempora, nisi quo veritatis neque blanditiis expedita consectetur laudantium explicabo! Ea assumenda facilis debitis consequuntur.</textarea>
+        </div>
+
+        <div class="publication__image">
+            <p>Imágen:</p>
+            <!-- <input type="file" class="publication__image-field"> -->
+    
+            <input formControlName="file" *ngIf="!imagePreview" class="publication__image-field" id="fileUpload" type="file" (change)="previewImage($event)" accept="image/*">
+            
+                <label *ngIf="!imagePreview" class="publication__custom-field-image" for="fileUpload">
+                    <i class="fa-solid fa-plus"></i>
+                    Selecciona una imágen
+                </label>
+
+                <div class="publication__image-container" style="display: flex; justify-content: center;">
+                    <img [src]="imagePreview" *ngIf="imagePreview" alt="">
+                </div>
+
+        <div class="publication__actions">
+
+            <button type="submit"
+                    class="publication__action-button publication__action-button-create"
+                    [disabled]="!imagePreview">
+                    Crear publicación
+            </button>
+
+            <button type="button"
+                    class="publication__action-button"
+                    (click)="cancel()">
+                    Cancelar
+            </button>
+
+        </div>
+    </div>
+
+    

@@ -11,23 +11,24 @@
                 <div class="auth-card__username-field">
                     <label for="username">Ingresa tu nombre de usuario:</label>
                      <input type="text" formControlName="username" placeholder="Nombre de usuario...">
-                     <span></span>
+                     <span *ngIf="usernameField?.hasError('required') && usernameField?.touched">* Este campo es obligatorio</span>
+                     <span *ngIf="usernameField?.hasError('minlength')">* El mínimo de carácteres del usuario es de 3</span>
                 </div>
 
                 <div class="auth-card__email-field">
                     <label for="email">Ingresa tu email:</label>
                      <input type="email" formControlName="email" placeholder="Email...">
+                     <span *ngIf="emailField?.hasError('required') && emailField?.touched">* Este campo es obligatorio</span>
+                     <span *ngIf="emailField?.hasError('email') && emailField?.touched">* Este email es inválido</span>
                 </div>
 
                 <div class="auth-card__password-field">
                     <label for="password">Ingresa tu contraseña:</label>
-                    <input type="password" name="password" id="password" placeholder="Contraseña...">
+                    <input type="password" formControlName="password" id="password" placeholder="Contraseña...">
+                    <span *ngIf="passwordField?.hasError('required') && passwordField?.touched">* Este campo es obligatorio</span>
+                    <span *ngIf="passwordField?.hasError('minlength')">* El mínimo de carácteres de la contraseña es de 6</span>
                 </div>
 
-                <div class="auth-card__confirm-password-field">
-                    <label for="confirm-password">Confirma tu contraseña:</label>
-                    <input type="confirm-password" name="confirm-password" id="confirm-password" placeholder="Confirmar contraseña...">
-                </div>
             </div>
             
             <div class="auth-card__footer">
@@ -44,11 +45,3 @@
         </form>
     </div>
 </div>
-
-<p>
-    Touched: 
-    {{ this.registerForm.controls['email'].touched | json }}
-
-    Pristine:
-    {{ this.registerForm.pristine | json }}
-</p>

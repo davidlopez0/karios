@@ -1,43 +1,49 @@
 <div class="publication">
-    <div class="publication__header">
-        <p-avatar [image]="publication.user.imageUrl" class="publication__photo-profile" size="xlarge" shape="circle"></p-avatar>
+  <div class="publication__header">
+    <p-avatar
+      [image]="publication.user?.imageUrl || ''"
+      class="publication__photo-profile"
+      size="xlarge"
+      shape="circle"
+    ></p-avatar>
 
-        <p class="publication__username">{{ publication.user.username }}</p>
+    <p class="publication__username" style="cursor: pointer;" routerLink="/karios/profile/{{publication.user?.username}}">{{ publication.user?.username || '' }}</p>
 
-        <p class="publication__date">{{ publication.publicationDate.getDate }}</p>
+    <p class="publication__date">{{ publication.publicationDate?.getDate || ''}}</p>
 
-        <p class="publication__likes"><i class="fa-solid fa-heart"></i> 0</p>
+    <p class="publication__likes"><i class="fa-solid fa-heart"></i> 0</p>
 
-        <p class="publication__comments"><i class="fa-solid fa-comment"></i> 0</p>
-    </div>
+    <p class="publication__comments"><i class="fa-solid fa-comment"></i> 0</p>
+  </div>
 
-    <div class="publication__body">
-        <p class="publication__description">
-            {{ publication.description }}
-        </p>
+  <div class="publication__body">
+    <p class="publication__description">
+      {{ publication.description }}
+    </p>
 
-        <p-image [src]="publication.imageUrl" styleClass="border-round-2xl" alt="Imagen de la publicacion" width="100%"></p-image>
-    </div>
+    <p-image
+      [src]="publication.imageUrl"
+      styleClass="border-round-2xl"
+      [imageStyle]="{ 'width': '100%', 'aspect-ratio': '1/1', 'object-fit': 'cover', 'max-height': '40rem' }"
+      alt="Imagen de la publicacion"
+      width="100%"
+    ></p-image>
+  </div>
 
-    <div class="publication__footer">
+  <div class="publication__footer">
+    <button type="button" class="publication__action-button">
+      <i class="fa-regular fa-heart"></i>
+      Me gusta
+    </button>
 
-            <button type="button"
-                    class="publication__action-button">
-                    <i class="fa-regular fa-heart"></i>
-                    Me gusta
-            </button>
+    <button type="button" class="publication__action-button">
+      <i class="fa-regular fa-comment"></i>
+      Comentar
+    </button>
 
-            <button type="button"
-                    class="publication__action-button">
-                    <i class="fa-regular fa-comment"></i>
-                    Comentar
-            </button>
-
-            <button type="button"
-                    class="publication__action-button">
-                    <i class="fa-solid fa-share"></i>
-                    Compartir
-            </button>
-
-    </div>
+    <button type="button" class="publication__action-button">
+      <i class="fa-solid fa-share"></i>
+      Compartir
+    </button>
+  </div>
 </div>

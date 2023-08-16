@@ -1,10 +1,10 @@
 import {User} from "./user.interface";
 
 export interface Publication {
-  publicationId: number;
+  publicationId?: number;
   description: string;
   imageUrl: string;
-  publicationDate: Date;
+  publicationDate?: Date;
   userId: number;
-  user: User;
+  user?: User;
 }

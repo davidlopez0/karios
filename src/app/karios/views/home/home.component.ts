@@ -3,11 +3,11 @@ import {Publication} from "../../interfaces/publication.interface";
 import {PublicationService} from "../../services/publication.service";
 
 @Component({
-  selector: 'app-home-page',
-  templateUrl: './home-page.component.html',
-  styleUrls: ['./home-page.component.scss']
+  selector: 'app-home',
+  templateUrl: './home.component.html',
+  styleUrls: ['./home.component.scss']
 })
-export class HomePageComponent implements OnInit {
+export class HomeComponent implements OnInit {
 
   constructor(private publicationService: PublicationService){}
 

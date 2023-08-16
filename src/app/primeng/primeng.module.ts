@@ -4,6 +4,7 @@ import { CardModule } from 'primeng/card';
 import { AvatarModule } from 'primeng/avatar';
 import { GalleriaModule } from 'primeng/galleria';
 import { ImageModule } from "primeng/image";
+import { FileUploadModule } from 'primeng/fileupload';
 
 
 @NgModule({
@@ -13,6 +14,7 @@ import { ImageModule } from "primeng/image";
     AvatarModule,
     GalleriaModule,
     ImageModule,
+    FileUploadModule
   ]
 })
 export class PrimengModule { }

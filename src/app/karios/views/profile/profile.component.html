@@ -1,0 +1,35 @@
+<div class="profile">
+
+    <div class="profile__header">
+        <div class="profile__header-information">
+            <div class="profile__header-information--1">
+                <p-avatar
+                [image]="user.imageUrl"
+                [style]="{ width: '4.5rem', height: '4.5rem' }"
+                size="xlarge"
+                shape="circle"
+            ></p-avatar>
+
+            <p>{{ user.username }}</p>
+            </div>
+
+            <div class="profile__header-information--2">
+                <p><span>Amigos:</span> 0</p>
+                <p><span>Publicaciones:</span> {{ publications?.length }}</p>
+            </div>
+        </div>
+
+        <div class="profile__header-options" *ngIf="showOptions">
+            <a routerLink="/karios/configuration">Configuración de mi perfil</a>
+        </div>
+
+        <hr style="background-color: black; border-color: black;">
+    </div>
+
+    <div class="profile__main">
+
+        <app-publication *ngFor="let publication of publications" [publication]="publication"></app-publication>
+
+    </div>
+
+</div>
