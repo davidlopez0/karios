@@ -18,7 +18,7 @@
             </div>
 
             <div class="chats__list-item">
-                <app-chats-item *ngFor="let chat of chats" [chatInformation]="chat" />
+                <app-chats-item *ngFor="let chat of chats" [chatInformation]="chat" routerLink="/karios/messenger/{{chat.chatId}}" />
             </div>
         </div>
 

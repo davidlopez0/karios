@@ -12,16 +12,12 @@
             <div class="chats__header">
                 <p class="chats__header-text">Mensajes</p>
 
-                <button class="chats__header-new-message-button">
+                <button class="chats__header-new-message-button" (click)="open()">
                     <i class="fa-solid fa-square-plus"></i>
                 </button>    
             </div>
 
             <div class="chats__list-item">
-                <app-chats-item *ngFor="let chat of chats" [chatInformation]="chat" />
-                <app-chats-item *ngFor="let chat of chats" [chatInformation]="chat" />
-                <app-chats-item *ngFor="let chat of chats" [chatInformation]="chat" />
-                <app-chats-item *ngFor="let chat of chats" [chatInformation]="chat" />
                 <app-chats-item *ngFor="let chat of chats" [chatInformation]="chat" />
             </div>
         </div>
@@ -37,3 +33,5 @@
 
     </div>
 </div>
+
+<app-create-chat *ngIf="createChat" class="animate__animated animate__fadeIn animate__faster"></app-create-chat>

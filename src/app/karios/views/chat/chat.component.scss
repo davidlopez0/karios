@@ -3,6 +3,7 @@
         display: grid;
         height: 100vh;
         width: 100%;
+        min-width: 100%;
         padding: 1rem;
         grid-template-rows: 5rem 1fr 6rem;
 
@@ -56,10 +57,10 @@
                     background-color: #dfe0e2;
                     border-radius: 1rem;
                 }
-            }
 
-            .chat__message:nth-child(2) {
-                justify-content: end;
+                .chat__message-text-end {
+                    margin-left: auto;
+                }
             }
         }
 

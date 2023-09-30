@@ -1,57 +1,26 @@
 <div class="chat">
     <div class="chat__header">
-        <p-avatar image="https://primefaces.org/cdn/primeng/images/demo/avatar/amyelsner.png" class="chat__photo-profile" size="xlarge" shape="circle"></p-avatar>
+        <p-avatar [image]="chat?.userChat?.imageUrl" class="chat__photo-profile" size="xlarge" shape="circle"></p-avatar>
 
-        <p class="chat__username">panchito</p>
+        <p class="chat__username">{{ chat?.userChat?.username }}</p>
 
-        <a routerLink="/karios/messenger" class="chat__close">
+        <a class="chat__close" routerLink="/karios/messenger">
             <i class="fa-solid fa-xmark"></i>
         </a>
     </div>
 
-    <div class="chat__body">
-        <div class="chat__message">
-            <p class="chat__message-text">
-                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Earum reprehenderit vero aut dignissimos fuga, error facere beatae velit quia magnam, exercitationem at iste voluptate placeat eaque incidunt ea. Quisquam, quis!
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipit quaerat esse numquam quis doloremque animi sed, repudiandae provident dignissimos debitis dolore! Quod quas incidunt, natus reprehenderit tenetur nihil provident amet?
-            </p>
-        </div>
-
-        <div class="chat__message">
-            <p class="chat__message-text">
-                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Earum reprehenderit vero aut dignissimos fuga, error facere beatae velit quia magnam, exercitationem at iste voluptate placeat eaque incidunt ea. Quisquam, quis!
-                
-            </p>
-        </div>
-
-        <div class="chat__message">
-            <p class="chat__message-text">
-                hola hola
-            </p>
-        </div>
-
-        <div class="chat__message">
-            <p class="chat__message-text">
-                hola hola
-            </p>
-        </div>
-
-        <div class="chat__message">
-            <p class="chat__message-text">
-                hola hola
-            </p>
-        </div>
-
-        <div class="chat__message">
-            <p class="chat__message-text">
-                hola hola
+    <div class="chat__body" #chatWindow>
+        <div class="chat__message" *ngFor="let message of getMessages">
+            <p class="chat__message-text" [ngClass]="message.userId == currentUserId ? 'chat__message-text-end' : ''">
+                {{ message.message }}
             </p>
         </div>
     </div>
 
     <div class="chat__footer">
         
-        <input class="chat__input-text" type="text" name="message" placeholder="Mensaje...">
+        <input class="chat__input-text" type="text" name="message" placeholder="Mensaje..." 
+            (keyup.enter)="enviarMensaje($event)" #inputMessage>
 
         <button type="button" class="chat__audio-action">
             <i class="fa-solid fa-microphone"></i>

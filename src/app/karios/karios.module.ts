@@ -14,8 +14,9 @@ import { CreatePublicationComponent } from './views/create-publication/create-pu
 import { LayoutPageComponent } from './pages/layout-page/layout-page.component';
 import { ImageCropperModule } from 'ngx-image-cropper';
 import { ConfigurationComponent } from './views/configuration/configuration.component';
-import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ProfileComponent } from './views/profile/profile.component';
+import { CreateChatComponent } from './components/create-chat/create-chat.component';
 
 
 @NgModule({
@@ -31,11 +32,13 @@ import { ProfileComponent } from './views/profile/profile.component';
     CreatePublicationComponent,
     HomeComponent,
     ConfigurationComponent,
-    ProfileComponent
+    ProfileComponent,
+    CreateChatComponent
   ],
   imports: [
     CommonModule,
     ReactiveFormsModule,
+    FormsModule,
     KariosRoutingModule,
     PrimengModule,
     ImageCropperModule

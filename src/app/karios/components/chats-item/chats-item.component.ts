@@ -8,7 +8,7 @@ import { Chat } from '../../interfaces/chat-item.interface';
 })
 export class ChatsItemComponent {
 
-  @Input() chatInformation!: Chat;
+  @Input() chatInformation!: any;
   
 
 }

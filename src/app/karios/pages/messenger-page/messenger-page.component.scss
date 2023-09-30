@@ -19,6 +19,19 @@
     }
 }
 
+app-create-chat {
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    margin: auto;
+    background-color: black;
+    max-width: 50rem;
+    max-height: 50rem;
+    border-radius: 3rem;
+}
+
 .content {
 
     .chats {
